@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMULARIO CLIENTE</title>
+</head>
+<body>
+  
+  <header>
+        <center>
+            <figure>
+                <img src="https://img.freepik.com/vector-premium/diseno-plantilla-logotipo-tienda-computadora-escritorio_316488-1458.jpg" alt="Logo de la Empresa" width="100">
+                <figcaption>Mi Empresa S.A.</figcaption>
+            </figure>
+
+            <h2 >DATOS CLIENTE</h2>
+        </center>
+    </header>
+
+  
+    <center>
+    <form action="server.html" method="get" >
+      <table border="1" > 
+        <tr>
+          <th colspan="2">Información del Cliente</th>
+        </tr>
+        <tr>
+          <td>
+            <label for="nombre">Nombre:</label>
+          </td>
+          <td>
+            <input type="text" id="nombre" name="nombre"  placeholder="Ejm Sariel" required>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="cedula">Cedula/RUC:</label>
+          </td>
+          <td>
+            <input type="text" id="cedula" name="cedula"  placeholder="Ejm 1756217137" minlength="10" maxlength="13" required>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="telefono">Telefono:</label>
+          </td>
+          <td>
+            <input type="tel" id="telefono" name="telefono" placeholder="EJm 0987748614" required>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="direccion">Direccion:</label>
+          </td>
+          <td>
+            <input type="text" id="direccion" name="direccion" placeholder="Machachi" required>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="email">Email:</label>
+          </td>
+          <td>
+            <input type="email" id="email" name="email" placeholder="Ejm ejemplo@correo.com" required>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="calle">Calle:</label>
+          </td>
+          <td>
+            <input type="text" id="calle" name="calle" placeholder="Ejm Lusi Cordero" required>
+          </td>
+        </tr>
+        <tr>
+          <td align="center">
+            <input type="submit" value="Enviar">
+          </td>
+          <td align="center">
+            <input type="reset" value="Vaciar">
+          </td>
+        </tr>
+      </table>
+    </form>
+    </center>
+  
+    <footer>
+        <center>
+            <p>&copy; 2025 Mi Empresa. Todos los derechos reservados.</p>
+        </center>
+    </footer>
+</body>
+</html>

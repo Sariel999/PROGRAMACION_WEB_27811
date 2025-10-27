@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMU</title>
+</head>
+<body>
+    <header>
+        <center><h1>REGISTRO DE ESTUDIANTE</h1></center>
+        <hr>
+    </header>
+    <center>
+    <main>
+        <form action="server.html" method="get">
+            <label for="apellidos">INGRESE SU APELLIDO:</label>
+            <input 
+            type="text" 
+            name="apellidos" 
+            id="apellidos"
+            placeholder="Ejm: PERALTA"
+            maxlength="10"
+            min="5" required>
+            <br>
+            <label for="nombres">INGRESE SU NOMBRE:</label>
+            <input 
+            type="text" 
+            name="nombres" 
+            id="nombres"
+            placeholder="Ejm: SARIEL"
+            maxlength="10"
+            min="5" required>
+            <br>
+            <label for="cedula">INGRESE SU CEDULAs</label>
+            <!-- <input type="text"
+                name="cedula"
+                id="cedula"
+                minlength="10"
+                maxlength="10"
+                pattern="[0-9]{10}"
+                placeholder="Ej: 0123456789"
+                
+                required> -->
+                <input type="number" name="cedula" id="cedula"  placeholder="1752743981" min="1000000000" max="9999999999" pattern="[0-9]{10}">
+            <br>
+            <label for="fecha_nacimiento">INGRESE SU FECHA DE NACIMIENTO</label>
+            <input type="date" name="fecha_nacimiento"
+              id="fecha" value="2025-10-20" min="2005-10-27" max="2025-10-27" required>
+            <br>
+                <!-- <label for="musica">SELECCIONE 5 MATERIAS(SOLO 5)</label>
+                <select name="materias" id="materias" required>
+                    <option value="programacion_Web" required>PROGRAMACION_WEB</option>
+                    <option value="base_de_datos" required>BASE_DE_DATOS</option>
+                    <option value="redes" required>REDES</option>
+                    <option value="ingles" required>INGLES</option>
+                    <option value="calculo" required>CALCULO</option>
+                    <option value="fisica" disabled>FISICA</option>
+
+
+                </select> -->
+                <label for="materias">SELECCIONE 5 MATERIAS</label><br>
+                <label for="programacion_web">PROGRAMACION WEB</label>
+                <input type="checkbox" name="materias[]" id="programacion_web"required>
+
+                <label for="base_de_datos">BASE DE DATOS</label>
+                <input type="checkbox" name="materias[]" id="base_de_datos"required>
+
+                <label for="redes">REDES</label>
+                <input type="checkbox" name="materias[]" id="redes"required>
+
+                <label for="ingles">INGLES</label>
+                <input type="checkbox" name="materias[]" id="ingles"required>
+
+                <label for="calculo">CALCULO</label>
+                <input type="checkbox" name="materias[]" id="calculo" required>
+
+                <label for="fisica">FISICA</label>
+                <input type="checkbox" name="materias[]" id="fisica" disabled>
+
+                
+            <br>
+            <label for="foto">SUBA SU CV</label>
+             <input type="file" name="cv" 
+             id="cv"
+             accept=".pdf" >
+            <br>
+
+            <label for="id_banner">ID BANNER</label>
+            <input type="text" name="id_banner" id="id_banner" required pattern="[A-Z]{3}[0-9]{5}" placeholder="LMU12345">
+            <br>
+            <button type="submit">Enviar></button>
+
+
+
+
+
+        </form>
+    </main>
+    </center>
+
+</body>
+</html>

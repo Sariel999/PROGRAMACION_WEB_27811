@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        SELECT
+    </title>
+</head>
+<body>
+    <header>
+        <h1>
+            SELECT EN FORMULARIOS
+        </h1>
+    </header>
+    <main>
+        <form action="server.html" method="get">
+            <!-- select point  -->
+            <label for="lenguaje_programacion">SELECCIONE SU LENGUAJE DE PROGRAMACION FAVORITO</label>
+            <select name="lenguaje_programacion" id="lenguaje_programacion">
+                <!-- En el value no enviar caracteres especiales + =, etc -->
+                <option value="c_mas_mas">C++</option>
+                <option value="java">JAVA</option>
+                <option value="python">PYTHON</option>
+                <option value="html" disabled>HTML</option>
+            </select>
+            <br>
+            <label for="musica_favorita">SELECCIONE SU MUSICA FAVORITA</label>
+            <!-- como son varios name se envia con array -->
+            <fieldset>
+                <select name="musica_favorita[]" id="musica_favorita" multiple required size="5">
+                <optgroup label="BANDA" title="BANDA">
+                <option value="LOBA">SHAKIRA LOBA</option>
+                <option value="ANOCHE">BAD BUNNY</option>
+                <option value="ALL_OF_ME">JOHN LENNON ALL OF ME</option>
+                <option value="TRISTE" selected>JOSE JOSE EL TRISTE</option>
+                <option value="LA NAVE DEL OLVIDO" disabled>JOSE JOSE LA NAVE DEL OLVIDO</option>
+                </optgroup>
+                <optgroup label="REGGAETON" title="REGGAETON">
+                <option value="DAME_CASUALIDAD">DAME CASUALIDAD</option>
+                <option value="TE_MENTI">TE MENTI</option>
+                <option value="FIEL">FIEL</option>
+                <option value="PROVENZA">PROVENZA</option>
+
+                </optgroup> 
+                <input type="date" name="" id="">
+            </select>
+            </fieldset>
+            <br>
+                <!-- TEXT AREA  -->
+                <label for="frase_motivadora">INGRESE SU FRASE DEL DIA DE HOY</label>  <br> 
+                <!-- text area no tiene value       -->
+                <textarea name="" id="" cols="30" rows="10">BUENOS DIAS CHIAVALES</textarea>
+                
+                <!-- hidden  -->
+                 <input type="hidden" name="cedula_usuario" value="12341243214231">
+
+            <br>
+            <!-- <input type="submit" value="JIJIJA"> -->
+             <button type="submit">
+                <!-- poner obligatoriamente el type submit      -->
+                ENVIAR AL SERVIDOR
+             </button>
+
+
+
+
+
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+
+
+</body>
+</html>
