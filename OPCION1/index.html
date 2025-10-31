@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>50 propiedades CSS - Ejemplos</title>
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    h1{
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .contenedor{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+    }
+    .card{
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 12px 14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.05);
+    }
+    .titulo-prop{
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .desc{
+      font-size: 0.85rem;
+      color: #333;
+      margin-bottom: 6px;
+    }
+    .demo{
+      border: 1px dashed #ccc;
+      padding: 6px;
+      margin-top: 6px;
+      background: #fafafa;
+    }
+
+    /* 1 color */
+    .ej1{ color: red; }
+
+    /* 2 background-color */
+    .ej2{ background-color: #f0f0f0; }
+
+    /* 3 font-size */
+    .ej3{ font-size: 20px; }
+
+    /* 4 font-family */
+    .ej4{ font-family: "Courier New", monospace; }
+
+    /* 5 font-weight */
+    .ej5{ font-weight: bold; }
+
+    /* 6 text-align */
+    .ej6{ text-align: center; }
+
+    /* 7 text-transform */
+    .ej7{ text-transform: uppercase; }
+
+    /* 8 text-decoration */
+    .ej8{ text-decoration: underline; }
+
+    /* 9 letter-spacing */
+    .ej9{ letter-spacing: 3px; }
+
+    /* 10 word-spacing */
+    .ej10{ word-spacing: 10px; }
+
+    /* 11 line-height */
+    .ej11{ line-height: 2; }
+
+    /* 12 margin */
+    .ej12{ margin: 15px; background:#fff1e6; }
+
+    /* 13 margin-top */
+    .ej13{ margin-top: 20px; background:#fff1e6; }
+
+    /* 14 margin-bottom */
+    .ej14{ margin-bottom: 20px; background:#fff1e6; }
+
+    /* 15 padding */
+    .ej15{ padding: 15px; background:#e6fff8; }
+
+    /* 16 padding-left */
+    .ej16{ padding-left: 25px; background:#e6fff8; }
+
+    /* 17 border */
+    .ej17{ border: 3px solid #333; }
+
+    /* 18 border-radius */
+    .ej18{ border: 2px solid #da5; border-radius: 12px; }
+
+    /* 19 width */
+    .ej19{ width: 150px; background:#dfefff; }
+
+    /* 20 height */
+    .ej20{ height: 50px; background:#dfefff; }
+
+    /* 21 max-width */
+    .ej21{ max-width: 200px; background:#fef4d7; }
+
+    /* 22 min-height */
+    .ej22{ min-height: 60px; background:#fef4d7; }
+
+    /* 23 display */
+    .ej23{ display: inline-block; background:#f2d5ff; }
+
+    /* 24 position */
+    .caja-pos-rel{
+      position: relative;
+      background: #fafafa;
+      height: 80px;
+    }
+    .ej24{
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #ffcccc;
+      padding: 4px 8px;
+    }
+
+    /* 25 top */
+    .ej25{
+      position: relative;
+      top: 10px;
+      background:#d3ffd3;
+    }
+
+    /* 26 left */
+    .ej26{
+      position: relative;
+      left: 15px;
+      background:#d3ffd3;
+    }
+
+    /* 27 right */
+    .cont27{
+      position: relative;
+      height: 50px;
+      background:#f6f6f6;
+    }
+    .ej27{
+      position: absolute;
+      right: 0;
+      top: 5px;
+      background:#ffdab3;
+      padding: 2px 6px;
+    }
+
+    /* 28 bottom */
+    .cont28{
+      position: relative;
+      height: 60px;
+      background:#f6f6f6;
+    }
+    .ej28{
+      position: absolute;
+      bottom: 0;
+      background:#cce5ff;
+      padding: 2px 6px;
+    }
+
+    /* 29 overflow */
+    .ej29{
+      width: 120px;
+      height: 50px;
+      overflow: hidden;
+      background:#fff3cd;
+    }
+
+    /* 30 z-index */
+    .cont30{
+      position: relative;
+      height: 70px;
+      background:#f6f6f6;
+    }
+    .z1{
+      position:absolute;
+      top:10px;left:10px;
+      background:#f88;
+      z-index:1;
+      padding:2px 5px;
+    }
+    .z2{
+      position:absolute;
+      top:20px;left:20px;
+      background:#88f;
+      z-index:2;
+      color:white;
+      padding:2px 5px;
+    }
+
+    /* 31 cursor */
+    .ej31{
+      cursor: pointer;
+      background:#e2ffe2;
+      display:inline-block;
+    }
+
+    /* 32 opacity */
+    .ej32{
+      background:#000;
+      color:#fff;
+      opacity:0.6;
+    }
+
+    /* 33 box-shadow */
+    .ej33{
+      box-shadow: 2px 2px 6px rgba(0,0,0,.3);
+      background:#fff;
+    }
+
+    /* 34 text-shadow */
+    .ej34{
+      text-shadow: 1px 1px 2px #000;
+      color:#fff;
+      background:#2a5;
+    }
+
+    /* 35 float */
+    .cont35{
+      border:1px solid #ddd;
+      height:80px;
+    }
+    .ej35{
+      float:right;
+      background:#ffdddd;
+      width:80px;
+      text-align:center;
+    }
+
+    /* 36 clear */
+    .ej36{
+      clear: both;
+      background:#ddffdd;
+    }
+
+    /* 37 flex-direction */
+    .cont37{
+      display:flex;
+      flex-direction: column;
+      gap:4px;
+      background:#e8f3ff;
+      padding:4px;
+    }
+
+    /* 38 justify-content */
+    .cont38{
+      display:flex;
+      justify-content: space-between;
+      background:#fffaf0;
+      padding:4px;
+    }
+    .item{background:#ddd;padding:3px 5px;}
+
+    /* 39 align-items */
+    .cont39{
+      display:flex;
+      align-items:center;
+      height:60px;
+      background:#f0f5ff;
+      gap:6px;
+    }
+    .alto{height:40px;background:#ccc;padding:3px;}
+
+    /* 40 flex-wrap */
+    .cont40{
+      display:flex;
+      flex-wrap:wrap;
+      gap:4px;
+      background:#f7e8ff;
+    }
+    .cajita{background:#ddd;padding:3px 5px;}
+
+    /* 41 gap */
+    .cont41{
+      display:flex;
+      gap:20px;
+      background:#e6fff8;
+      padding:4px;
+    }
+
+    /* 42 grid-template-columns */
+    .cont42{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:4px;
+      background:#fff3f3;
+    }
+
+    /* 43 grid-template-rows */
+    .cont43{
+      display:grid;
+      grid-template-rows: 40px auto;
+      gap:4px;
+      background:#f3fff3;
+    }
+
+    /* 44 align-content */
+    .cont44{
+      display:flex;
+      flex-wrap:wrap;
+      align-content: space-around;
+      height:100px;
+      background:#fffbe6;
+      gap:4px;
+    }
+
+    /* 45 background-image */
+    .ej45{
+      background-image: linear-gradient(90deg, #8ec5fc 0%, #e0c3fc 100%);
+      height:40px;
+      color:#000;
+    }
+
+    /* 46 background-size */
+    .ej46{
+      background-image:url('https://via.placeholder.com/150');
+      background-size: cover;
+      background-repeat: no-repeat;
+      height:60px;
+      color:#fff;
+    }
+
+    /* 47 background-repeat */
+    .ej47{
+      background-image:url('https://via.placeholder.com/40');
+      background-repeat: no-repeat;
+      height:50px;
+    }
+
+    /* 48 transition */
+    .ej48{
+      background:#ccc;
+      transition: all .3s ease;
+    }
+    .ej48:hover{
+      background:#8bc34a;
+      color:white;
+    }
+
+    /* 49 transform */
+    .ej49{
+      display:inline-block;
+      background:#ffcdd2;
+      transition: transform .2s;
+    }
+    .ej49:hover{
+      transform: scale(1.2);
+    }
+
+    /* 50 animation */
+    @keyframes mover {
+      0%{ transform: translateX(0); }
+      50%{ transform: translateX(25px); }
+      100%{ transform: translateX(0); }
+    }
+    .ej50{
+      background:#b2ebf2;
+      animation: mover 2s infinite;
+      display:inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h1>50 propiedades CSS - Ejemplos</h1>
+  <div class="contenedor">
+
+    <div class="card">
+      <div class="titulo-prop">1. color: red;</div>
+      <div class="desc">Cambia el color del texto.</div>
+      <div class="demo ej1">Texto en rojo</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">2. background-color: #f0f0f0;</div>
+      <div class="desc">Cambia el color de fondo.</div>
+      <div class="demo ej2">Fondo gris claro</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">3. font-size: 20px;</div>
+      <div class="desc">Cambia el tamaño del texto.</div>
+      <div class="demo ej3">Texto más grande</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">4. font-family: Courier;</div>
+      <div class="desc">Cambia la tipografía.</div>
+      <div class="demo ej4">Texto con Courier</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">5. font-weight: bold;</div>
+      <div class="desc">Texto en negrita.</div>
+      <div class="demo ej5">Texto negrita</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">6. text-align: center;</div>
+      <div class="desc">Centra el texto.</div>
+      <div class="demo ej6">Texto centrado</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">7. text-transform: uppercase;</div>
+      <div class="desc">Convierte a mayúsculas.</div>
+      <div class="demo ej7">texto convertido</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">8. text-decoration: underline;</div>
+      <div class="desc">Subraya el texto.</div>
+      <div class="demo ej8">Texto subrayado</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">9. letter-spacing: 3px;</div>
+      <div class="desc">Espacio entre letras.</div>
+      <div class="demo ej9">ESPACIO</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">10. word-spacing: 10px;</div>
+      <div class="desc">Espacio entre palabras.</div>
+      <div class="demo ej10">Hola mundo CSS</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">11. line-height: 2;</div>
+      <div class="desc">Alto entre líneas.</div>
+      <div class="demo ej11">Línea 1<br>Línea 2<br>Línea 3</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">12. margin: 15px;</div>
+      <div class="desc">Espacio exterior.</div>
+      <div class="demo ej12">Con margen alrededor</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">13. margin-top: 20px;</div>
+      <div class="desc">Espacio arriba.</div>
+      <div class="demo ej13">Margen superior</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">14. margin-bottom: 20px;</div>
+      <div class="desc">Espacio abajo.</div>
+      <div class="demo ej14">Margen inferior</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">15. padding: 15px;</div>
+      <div class="desc">Espacio interno.</div>
+      <div class="demo ej15">Con padding</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">16. padding-left: 25px;</div>
+      <div class="desc">Espacio interno izquierdo.</div>
+      <div class="demo ej16">Texto corrido</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">17. border: 3px solid;</div>
+      <div class="desc">Borde alrededor.</div>
+      <div class="demo ej17">Caja con borde</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">18. border-radius: 12px;</div>
+      <div class="desc">Esquinas redondeadas.</div>
+      <div class="demo ej18">Caja redondeada</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">19. width: 150px;</div>
+      <div class="desc">Ancho fijo.</div>
+      <div class="demo ej19">Ancho 150px</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">20. height: 50px;</div>
+      <div class="desc">Alto fijo.</div>
+      <div class="demo ej20">Alto 50px</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">21. max-width: 200px;</div>
+      <div class="desc">Ancho máximo.</div>
+      <div class="demo ej21">No pasa de 200px aunque el texto sea largo.</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">22. min-height: 60px;</div>
+      <div class="desc">Alto mínimo.</div>
+      <div class="demo ej22">Siempre mide al menos 60px</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">23. display: inline-block;</div>
+      <div class="desc">Se comporta como bloque en línea.</div>
+      <div class="demo ej23">Inline-block</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">24. position: absolute;</div>
+      <div class="desc">Posiciona respecto al contenedor.</div>
+      <div class="demo caja-pos-rel">
+        <div class="ej24">Caja absoluta</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">25. top: 10px;</div>
+      <div class="desc">Desplaza hacia abajo.</div>
+      <div class="demo ej25">Movido hacia abajo</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">26. left: 15px;</div>
+      <div class="desc">Desplaza hacia la derecha.</div>
+      <div class="demo ej26">Movido a la derecha</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">27. right: 0;</div>
+      <div class="desc">Pega al lado derecho.</div>
+      <div class="demo cont27">
+        <div class="ej27">Derecha</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">28. bottom: 0;</div>
+      <div class="desc">Pega abajo.</div>
+      <div class="demo cont28">
+        <div class="ej28">Abajo</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">29. overflow: hidden;</div>
+      <div class="desc">Oculta el exceso.</div>
+      <div class="demo ej29">Texto largo que se va a cortar porque el overflow está oculto.</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">30. z-index: 1,2;</div>
+      <div class="desc">Controla qué queda encima.</div>
+      <div class="demo cont30">
+        <div class="z1">Caja 1</div>
+        <div class="z2">Caja 2 (encima)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">31. cursor: pointer;</div>
+      <div class="desc">Cambia el cursor.</div>
+      <div class="demo ej31">Pasa el mouse aquí</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">32. opacity: 0.6;</div>
+      <div class="desc">Transparencia.</div>
+      <div class="demo ej32">Soy semitransparente</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">33. box-shadow;</div>
+      <div class="desc">Sombra alrededor.</div>
+      <div class="demo ej33">Caja con sombra</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">34. text-shadow;</div>
+      <div class="desc">Sombra en texto.</div>
+      <div class="demo ej34">Texto con sombra</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">35. float: right;</div>
+      <div class="desc">Flota a la derecha.</div>
+      <div class="demo cont35">
+        <div class="ej35">Floto</div>
+        Texto normal alrededor.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">36. clear: both;</div>
+      <div class="desc">Limpia floats.</div>
+      <div class="demo ej36">Bajo cualquier float</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">37. flex-direction: column;</div>
+      <div class="desc">Coloca hijos en columna.</div>
+      <div class="demo cont37">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">38. justify-content: space-between;</div>
+      <div class="desc">Distribuye en eje principal.</div>
+      <div class="demo cont38">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">39. align-items: center;</div>
+      <div class="desc">Centra en eje secundario.</div>
+      <div class="demo cont39">
+        <div class="item">Corto</div>
+        <div class="alto">Más alto</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">40. flex-wrap: wrap;</div>
+      <div class="desc">Permite saltar de línea.</div>
+      <div class="demo cont40">
+        <div class="cajita">1</div>
+        <div class="cajita">2</div>
+        <div class="cajita">3</div>
+        <div class="cajita">4</div>
+        <div class="cajita">5</div>
+        <div class="cajita">6</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">41. gap: 20px;</div>
+      <div class="desc">Espacio entre ítems.</div>
+      <div class="demo cont41">
+        <div class="item">Caja 1</div>
+        <div class="item">Caja 2</div>
+        <div class="item">Caja 3</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">42. grid-template-columns;</div>
+      <div class="desc">Define columnas del grid.</div>
+      <div class="demo cont42">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">43. grid-template-rows;</div>
+      <div class="desc">Define filas del grid.</div>
+      <div class="demo cont43">
+        <div class="item">Fila 1 (40px)</div>
+        <div class="item">Fila 2 (auto)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">44. align-content: space-around;</div>
+      <div class="desc">Distribuye líneas.</div>
+      <div class="demo cont44">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">45. background-image;</div>
+      <div class="desc">Imagen de fondo.</div>
+      <div class="demo ej45">Fondo degradado</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">46. background-size: cover;</div>
+      <div class="desc">La imagen cubre todo.</div>
+      <div class="demo ej46">Imagen de fondo</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">47. background-repeat: no-repeat;</div>
+      <div class="desc">No repite la imagen.</div>
+      <div class="demo ej47"></div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">48. transition: all .3s;</div>
+      <div class="desc">Suaviza cambios.</div>
+      <div class="demo ej48">Pásame el mouse</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">49. transform: scale(1.2);</div>
+      <div class="desc">Transforma el elemento.</div>
+      <div class="demo ej49">Pasa el mouse</div>
+    </div>
+
+    <div class="card">
+      <div class="titulo-prop">50. animation: mover 2s infinite;</div>
+      <div class="desc">Anima un elemento.</div>
+      <div class="demo ej50">Me muevo 🙂</div>
+    </div>
+
+  </div>
+</body>
+</html>
