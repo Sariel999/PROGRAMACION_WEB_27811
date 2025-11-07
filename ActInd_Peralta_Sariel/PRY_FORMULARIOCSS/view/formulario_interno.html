@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        INTERNO
+    </title>
+
+    <style>
+ 
+        input[type="text"] {
+            border: 2px solid blue; 
+        }
+
+        textarea {
+            resize: none; 
+        }
+
+        select {
+            background-color: rgb(17, 155, 160); 
+        }
+
+        input[type="checkbox"] {
+            accent-color: green; 
+        }
+
+        input[type="radio"] {
+            transform: scale(1.3); 
+        }
+        body{
+            background-color: #b5d6d6;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1 style="color: darkred;">INFORMACION DEL ESTUDIANTE</h1>
+        <hr style="border: 2px solid black;">
+        
+        <label for="nombre" style="font-weight: bold;">NOMBRE</label><br>
+        <input type="text" id="nombre"><br>
+        
+        <label for="mensaje" style="text-decoration: underline;">Escriba un mensaje</label><br>
+        <textarea name="mensaje" id="">Mensaje</textarea><br>
+        
+        <label for="select" style="letter-spacing: 2px;">CANCION FAVORITA DE DEFTONES</label><br><br>
+        <select name="select" id="">
+            <option value="opcion1">Rosemary-Deftones</option>
+            <option value="opcion2">Entombed-Deftones</option>
+            <option value="opcion3">My Own Summer-Deftones</option>
+        </select>
+        <br><br>
+
+        <label>SELECCIONE SUS MATERIAS FAVORITAS</label><br>
+        <label for="programacion_Web">PROGRAMACION WEB</label>
+        <input type="checkbox" name="materias[]" id="programacion_Web">
+        <label for="modelos_Discretos">MODELOS DISCRETOS</label>
+        <input type="checkbox" name="materias[]" id="modelos_Discretos">
+        <br><br>
+
+        <label>SELECCIONE SU GENERO</label><br>
+        <input type="radio" name="genero" id="MASCULINO">MASCULINO
+        <input type="radio" name="genero" id="FEMENINO">FEMENINO
+        <input type="radio" name="genero" id="NOSE">NOSE
+    </center>
+
+    <center>
+        <footer>
+            <hr>
+            <p>MR ROBOT © 2023</p>
+        </footer>
+    </center>
+</body>
+</html>

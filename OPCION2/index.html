@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Propiedades CSS de Fuente y Color (parte 7)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .contenedor {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 12px 14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.08);
+    }
+    .titulo-prop {
+      font-weight: bold;
+      color: #1a237e;
+      margin-bottom: 5px;
+    }
+    .desc {
+      font-size: 0.85rem;
+      color: #333;
+      margin-bottom: 6px;
+    }
+    .code {
+      font-family: monospace;
+      background: #f0f0f0;
+      padding: 4px;
+      display: inline-block;
+      border-radius: 5px;
+      margin-bottom: 5px;
+    }
+    .demo {
+      border: 1px dashed #ccc;
+      padding: 6px;
+      margin-top: 6px;
+      background: #fafafa;
+    }
+
+    /* 1 flood-color */
+    svg.ej1 rect {
+      flood-color: red;
+    }
+
+    /* 2 flood-opacity */
+    svg.ej2 rect {
+      flood-color: blue;
+      flood-opacity: 0.3;
+    }
+
+    /* 3 font-family */
+    .ej3 {
+      font-family: 'Courier New', monospace;
+      background: #e1f5fe;
+    }
+
+    /* 4 font-feature-settings */
+    .ej4 {
+      font-feature-settings: "smcp";
+      font-variant-caps: small-caps;
+    }
+
+    /* 5 font-kerning */
+    .ej5 {
+      font-kerning: none;
+      background: #fff9c4;
+    }
+
+    /* 6 font-language-override */
+    .ej6 {
+      font-language-override: "TRK";
+      background: #f8bbd0;
+    }
+
+    /* 7 font-optical-sizing */
+    .ej7 {
+      font-optical-sizing: auto;
+      font-size: 20px;
+      font-family: 'Times New Roman';
+    }
+
+    /* 8 font-palette */
+    .ej8 {
+      font-palette: light;
+      background: #dcedc8;
+    }
+
+    /* 9 font-size-adjust */
+    .ej9 {
+      font-size-adjust: 0.5;
+      font-size: 20px;
+    }
+
+    /* 10 font-size */
+    .ej10 {
+      font-size: 24px;
+      background: #ffe0b2;
+    }
+
+    /* 11 font-smooth */
+    .ej11 {
+      -webkit-font-smoothing: antialiased;
+      background: #f0f4c3;
+    }
+
+    /* 12 font-stretch */
+    .ej12 {
+      font-stretch: expanded;
+      background: #c8e6c9;
+    }
+
+    /* 13 font-style */
+    .ej13 {
+      font-style: italic;
+      background: #f3e5f5;
+    }
+
+    /* 14 font-synthesis-position */
+    .ej14 {
+      font-synthesis-position: auto;
+    }
+
+    /* 15 font-synthesis-small-caps */
+    .ej15 {
+      font-synthesis-small-caps: none;
+    }
+
+    /* 16 font-synthesis-style */
+    .ej16 {
+      font-synthesis-style: none;
+      font-style: italic;
+    }
+
+    /* 17 font-synthesis-weight */
+    .ej17 {
+      font-synthesis-weight: none;
+      font-weight: 700;
+    }
+
+    /* 18 font-variant-alternates */
+    .ej18 {
+      font-variant-alternates: historical-forms;
+      background: #e1bee7;
+    }
+
+    /* 19 font-variant-caps */
+    .ej19 {
+      font-variant-caps: small-caps;
+      background: #d1c4e9;
+    }
+
+    /* 20 font-variant-east-asian */
+    .ej20 {
+      font-variant-east-asian: traditional;
+      background: #ffccbc;
+    }
+
+    /* 21 font-variant-emoji */
+    .ej21 {
+      font-variant-emoji: text;
+      background: #b2dfdb;
+    }
+
+    /* 22 font-variant-ligatures */
+    .ej22 {
+      font-variant-ligatures: none;
+      background: #fff59d;
+    }
+
+    /* 23 font-variant-numeric */
+    .ej23 {
+      font-variant-numeric: oldstyle-nums;
+      background: #dcedc8;
+    }
+
+    /* 24 font-variant-position */
+    .ej24 {
+      font-variant-position: sub;
+    }
+
+    /* 25 font-variation-settings */
+    .ej25 {
+      font-variation-settings: "wght" 700;
+      font-family: "Arial";
+    }
+
+    /* 26 font-weight */
+    .ej26 {
+      font-weight: 800;
+      background: #f8bbd0;
+    }
+
+    /* 27 font shorthand */
+    .ej27 {
+      font: italic small-caps bold 18px/1.2 "Times New Roman";
+    }
+
+    /* 28 forced-color-adjust */
+    .ej28 {
+      forced-color-adjust: none;
+      background: #cfd8dc;
+      color: #000;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Propiedades CSS de Fuente y Color (parte 7)</h1>
+  <div class="contenedor">
+
+    <div class="card"><div class="titulo-prop">1. flood-color</div><div class="code">flood-color: red;</div><div class="desc">Define el color de relleno SVG en filtros de inundación.</div><div class="demo"><svg class="ej1"><rect width="100" height="60" style="fill:red;"/></svg></div></div>
+
+    <div class="card"><div class="titulo-prop">2. flood-opacity</div><div class="code">flood-opacity: 0.3;</div><div class="desc">Controla la transparencia del color de inundación SVG.</div><div class="demo"><svg class="ej2"><rect width="100" height="60" style="fill:blue;opacity:0.3;"/></svg></div></div>
+
+    <div class="card"><div class="titulo-prop">3. font-family</div><div class="code">font-family: 'Courier New', monospace;</div><div class="desc">Define la familia tipográfica usada.</div><div class="demo ej3">Texto con Courier New</div></div>
+
+    <div class="card"><div class="titulo-prop">4. font-feature-settings</div><div class="code">font-feature-settings: "smcp";</div><div class="desc">Activa características OpenType específicas.</div><div class="demo ej4">texto con small caps</div></div>
+
+    <div class="card"><div class="titulo-prop">5. font-kerning</div><div class="code">font-kerning: none;</div><div class="desc">Desactiva el ajuste automático entre letras.</div><div class="demo ej5">AVATAR</div></div>
+
+    <div class="card"><div class="titulo-prop">6. font-language-override</div><div class="code">font-language-override: "TRK";</div><div class="desc">Cambia la configuración de idioma tipográfico.</div><div class="demo ej6">Texto ejemplo</div></div>
+
+    <div class="card"><div class="titulo-prop">7. font-optical-sizing</div><div class="code">font-optical-sizing: auto;</div><div class="desc">Ajusta automáticamente la legibilidad según el tamaño.</div><div class="demo ej7">Texto ajustado ópticamente</div></div>
+
+    <div class="card"><div class="titulo-prop">8. font-palette</div><div class="code">font-palette: light;</div><div class="desc">Selecciona una paleta de color en fuentes COLRv1.</div><div class="demo ej8">Texto de ejemplo</div></div>
+
+    <div class="card"><div class="titulo-prop">9. font-size-adjust</div><div class="code">font-size-adjust: 0.5;</div><div class="desc">Ajusta el tamaño del texto según su altura x.</div><div class="demo ej9">Texto ajustado</div></div>
+
+    <div class="card"><div class="titulo-prop">10. font-size</div><div class="code">font-size: 24px;</div><div class="desc">Define el tamaño de la fuente.</div><div class="demo ej10">Texto grande</div></div>
+
+    <div class="card"><div class="titulo-prop">11. font-smooth</div><div class="code">-webkit-font-smoothing: antialiased;</div><div class="desc">Mejora el suavizado del texto.</div><div class="demo ej11">Texto suavizado</div></div>
+
+    <div class="card"><div class="titulo-prop">12. font-stretch</div><div class="code">font-stretch: expanded;</div><div class="desc">Expande el ancho del texto.</div><div class="demo ej12">Texto expandido</div></div>
+
+    <div class="card"><div class="titulo-prop">13. font-style</div><div class="code">font-style: italic;</div><div class="desc">Aplica estilo cursivo.</div><div class="demo ej13">Texto en cursiva</div></div>
+
+    <div class="card"><div class="titulo-prop">14. font-synthesis-position</div><div class="code">font-synthesis-position: auto;</div><div class="desc">Controla la posición de glifos sintéticos.</div><div class="demo ej14">Texto ejemplo</div></div>
+
+    <div class="card"><div class="titulo-prop">15. font-synthesis-small-caps</div><div class="code">font-synthesis-small-caps: none;</div><div class="desc">Evita que el navegador genere falsos small caps.</div><div class="demo ej15">Texto ejemplo</div></div>
+
+    <div class="card"><div class="titulo-prop">16. font-synthesis-style</div><div class="code">font-synthesis-style: none;</div><div class="desc">Evita que el navegador genere falso cursivo.</div><div class="demo ej16">Texto en cursiva real</div></div>
+
+    <div class="card"><div class="titulo-prop">17. font-synthesis-weight</div><div class="code">font-synthesis-weight: none;</div><div class="desc">Evita pesos falsos generados por el navegador.</div><div class="demo ej17">Texto en negrita real</div></div>
+
+    <div class="card"><div class="titulo-prop">18. font-variant-alternates</div><div class="code">font-variant-alternates: historical-forms;</div><div class="desc">Activa formas tipográficas históricas.</div><div class="demo ej18">Texto histórico</div></div>
+
+    <div class="card"><div class="titulo-prop">19. font-variant-caps</div><div class="code">font-variant-caps: small-caps;</div><div class="desc">Muestra mayúsculas pequeñas.</div><div class="demo ej19">texto en versalitas</div></div>
+
+    <div class="card"><div class="titulo-prop">20. font-variant-east-asian</div><div class="code">font-variant-east-asian: traditional;</div><div class="desc">Usa variantes tipográficas orientales.</div><div class="demo ej20">漢字 日本語</div></div>
+
+    <div class="card"><div class="titulo-prop">21. font-variant-emoji</div><div class="code">font-variant-emoji: text;</div><div class="desc">Fuerza los emojis a renderizarse como texto.</div><div class="demo ej21">😀😃😄</div></div>
+
+    <div class="card"><div class="titulo-prop">22. font-variant-ligatures</div><div class="code">font-variant-ligatures: none;</div><div class="desc">Desactiva ligaduras tipográficas.</div><div class="demo ej22">fi fl ffi</div></div>
+
+    <div class="card"><div class="titulo-prop">23. font-variant-numeric</div><div class="code">font-variant-numeric: oldstyle-nums;</div><div class="desc">Activa números con estilo antiguo.</div><div class="demo ej23">1234567890</div></div>
+
+    <div class="card"><div class="titulo-prop">24. font-variant-position</div><div class="code">font-variant-position: sub;</div><div class="desc">Muestra texto en posición inferior (subíndice).</div><div class="demo ej24">H<sub>2</sub>O</div></div>
+
+    <div class="card"><div class="titulo-prop">25. font-variation-settings</div><div class="code">font-variation-settings: "wght" 700;</div><div class="desc">Controla los ejes variables de una fuente.</div><div class="demo ej25">Texto pesado</div></div>
+
+    <div class="card"><div class="titulo-prop">26. font-weight</div><div class="code">font-weight: 800;</div><div class="desc">Define el grosor del texto.</div><div class="demo ej26">Texto muy grueso</div></div>
+
+    <div class="card"><div class="titulo-prop">27. font (taquigrafía)</div><div class="code">font: italic small-caps bold 18px/1.2 "Times New Roman";</div><div class="desc">Propiedad abreviada que combina estilo, tamaño y familia.</div><div class="demo ej27">Texto combinado</div></div>
+
+    <div class="card"><div class="titulo-prop">28. forced-color-adjust</div><div class="code">forced-color-adjust: none;</div><div class="desc">Evita que el navegador cambie colores por temas del sistema.</div><div class="demo ej28">Colores forzados desactivados</div></div>
+    <div style="column-count: 3; column-fill: auto; height: 150px; border: 1px solid gray;">
+  Este texto se usa para ver cómo actúa column-fill. Cuando se usa "auto",
+  el contenido llena una columna completamente antes de pasar a la siguiente,
+  mientras que con "balance" intenta equilibrar la altura de todas.
+</div>
+
+  </div>
+</body>
+</html>

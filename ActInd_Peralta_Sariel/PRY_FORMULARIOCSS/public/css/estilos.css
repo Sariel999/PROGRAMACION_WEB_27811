@@ -1,0 +1,42 @@
+select {
+    color: rgb(126, 20, 20);
+    border: 2px solid black;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 2px dashed green;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    color: darkblue;
+}
+
+input[type="radio"] {
+    cursor: pointer;
+    margin-right: 5px;
+    accent-color: crimson;
+    vertical-align: middle;
+    scale: 1.2;
+}
+
+input[type="checkbox"] {
+    margin-left: 15px;
+    accent-color: limegreen;
+    cursor: pointer;
+    transform: rotate(5deg);
+    filter: drop-shadow(0 0 3px gray);
+}
+
+textarea {
+    font-style: italic;
+    background-color: #eef;
+    border: 2px solid purple;
+    line-height: 1.5;
+    text-transform: capitalize;
+}
+body{
+    background-color: #ceb5b7;
+}
